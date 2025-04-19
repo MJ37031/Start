@@ -1,8 +1,6 @@
 # Start
 // 연습문제 05
 #define _CRT_SECURE_NO_WARNINGS
-
-
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -13,7 +11,6 @@ struct money
 	int number;
 	int won;
 };
-
 struct money max(money arr[], int n)
 {
 	money maxdata = arr[0];
@@ -26,7 +23,6 @@ struct money max(money arr[], int n)
 	}
 	return maxdata;
 }
-
 int main()
 {
 	money saving[5], king;
