@@ -5,31 +5,29 @@
 #include <stdio.h>
 #include <math.h>
 
-
 int main()
 {
-	int n;
-	int str[50];
-	while (scanf("%d", &n) != EOF)  // EOF까지 계속 반복
-	{
-		for (int i = 0; i < n; i++)  // n개의 약수 입력
-		{
-			scanf("%d", &str[i]);
-		}
-		int num;
+    int n, num;
+    int str[50];
 
-		if (n == 1)  // 약수 개수가 1개일 때 -> 제곱
+    while (scanf("%d", &n) != EOF)  // EOF까지 계속 반복
+    {
+        for (int i = 0; i < n; i++)  // n개의 약수 입력
+        {
+            scanf("%d", &str[i]);
+        }
+		if (n == 1)
 		{
-			num = pow(str[0], 2);  
+			num = pow(str[0], 2);
 		}
-		else if (n > 1) // 약수 개수 1 이상 -> 오름차순 정렬
+		else if (n > 1)
 		{
 			int i, j, tmp;
-			for ( i = 0; i < n-1; i++)
+			for (i = 0; i < n - 1; i++)
 			{
-				for (j = 1+i; j < n; j++)
+				for (j = 1 + i; j < n; j++)
 				{
-					if (str[i] > str[j]) 
+					if (str[i] > str[j])
 					{
 						tmp = str[i];
 						str[i] = str[j];
@@ -37,11 +35,10 @@ int main()
 					}
 				}
 			}
-			num = str[0] * str[n - 1];  // 제일 큰 수 * 작은 수 
+			num = str[0] * str[n - 1];
 		}
 		printf("%d", num);
 	}
 
 	return 0;
 }
-
